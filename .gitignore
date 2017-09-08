@@ -1,6 +1,6 @@
 .classpath
-.jar
 .war
+.jar
 .war.original
 .lst
 .properties

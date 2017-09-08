@@ -57,11 +57,4 @@ public class HomeController {
 		return "speakers";
 	}
 	
-	@RequestMapping("/address")
-	public String giveAddress(Model model){	
-		model.addAttribute("eventName", "Łódzkie Dni Informatyki");
-		model.addAttribute("eventDate","22 - 23 listpad 2017 r.");
-		return "adddress";
-	}
-	
 }

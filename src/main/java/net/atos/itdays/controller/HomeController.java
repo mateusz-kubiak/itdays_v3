@@ -50,11 +50,11 @@ public class HomeController {
 		return "signUp";
 	}
 	
-	@RequestMapping("/speakers")
-	public String speakers(Model model){	
-		model.addAttribute("eventName", "Łódzkie Dni Informatyki");
-		model.addAttribute("eventDate","22 - 23 listpad 2017 r.");
-		return "speakers";
-	}
+//	@RequestMapping("/speakers")
+//	public String speakers(Model model){	
+//		model.addAttribute("eventName", "Łódzkie Dni Informatyki");
+//		model.addAttribute("eventDate","22 - 23 listpad 2017 r.");
+//		return "speakers";
+//	}
 	
 }

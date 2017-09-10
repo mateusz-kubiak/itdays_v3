@@ -51,7 +51,7 @@ footer {
 						<ul class="dropdown-menu">
 							<li><a href="#"></a></li>
 							<li><a href="<spring:url value="/information" />"> </span>  O wydarzeniu </a></li>
-							<li><a href="<spring:url value="/speakers" />"> </span>  Prelegenci </a></li>
+							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
 					<li><a href="#">Agenda</a></li>

@@ -49,7 +49,7 @@ footer {
 						<ul class="dropdown-menu">
 							<li><a href="#"></a></li>
 							<li><a href="<spring:url value="/information" />"> </span>  O wydarzeniu </a></li>
-							<li><a href="<spring:url value="/speakers" />"> </span>  Prelegenci </a></li>
+							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
 					<li><a href="#">Agenda</a></li>
@@ -77,19 +77,20 @@ footer {
 		<br>
 		<div class="row">
 			<div class="col-sm-3">
-				<img src="<c:url value="/resources/speakers/prelegent_1.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
+				<img src="<c:url value="/src/main/resources/static/images/prelegent_1.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
+				<img th:src="@{/static/images/prelegent_1.jpg}" />
 				<p>Kilka słów o prelegencie nr 1</p>
 			</div>
 			<div class="col-sm-3">
-				<img src="<c:url value="/resource/speakers/prelegent_2.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
+				<img src="<c:url value="/main/resources/static/images/prelegent_1.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
 				<p>Kilka słów o prelegencie nr 2</p>
 			</div>
 			<div class="col-sm-3">
-				<img src="<c:url value="/main/resources/speakers/prelegent_3.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
+				<img src="<c:url value="/resources/static/images/prelegent_1.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
 				<p>Kilka słów o prelegencie nr 3</p>
 			</div>
 			<div class="col-sm-3">
-				<img src="<c:url value="/resources/speakers/prelegent_4.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
+				<img src="<c:url value="/static/images/prelegent_1.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
 				<p>Kilka słów o prelegencie nr 4</p>
 			</div>
 		</div>
@@ -99,7 +100,7 @@ footer {
 	<div class="container-fluid bg-3 text-center">
 		<div class="row">
 			<div class="col-sm-3">
-				<img src="<c:url value="/src/main/resource/prelegent_1.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
+				<img src="<c:url value="/spring-boot-sample-web-jsp/src/main/resources/static/images/prelegent_8.jpg"></c:url>" width="428" height="391" alt="image"  style = "width:100%"/>
 				<p>Kilka słów o prelegencie nr 5</p>
 			</div>
 			<div class="col-sm-3">

@@ -49,7 +49,7 @@ footer {
 						<ul class="dropdown-menu">
 							<li><a href="#"></a></li>
 							<li><a href="<spring:url value="/information" />"> </span>  O wydarzeniu </a></li>
-							<li><a href="<spring:url value="/speakers" />"> </span>  Prelegenci </a></li>
+							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
 					<li><a href="#">Agenda</a></li>
@@ -89,35 +89,35 @@ footer {
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dell_Logo.png" alt="Chania" width="460" height="345">
+      <center><img src="https://pirsummedia.pl/wp-content/uploads/2016/04/malymuzyk.jpg" width="600" height="600"></center>
         <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+          <h3>SPONDOR NR 1</h3>
+          <p>Przykładowe logo sponsora nr 1</p>
         </div>
       </div>
 
       <div class="item">
-        <img src="img_chania2.jpg" alt="Chania" width="460" height="345">
+        <center><img src="https://store.monde.pl/wp-content/uploads/2015/04/arsmedicum_logo.jpg" width="600" height="600"></center>
         <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+          <h3>SPONDOR NR 2</h3>
+          <p>Przykładowe logo sponsora nr 2</p>
         </div>
       </div>
     
       <div class="item">
-        <img src="img_flower.jpg" alt="Flower" width="460" height="345">
+        <center><img src="https://www.logocowboy.com/wp-content/uploads/2016/01/sandersonlawfirm2-600x600.png" width="600" height="600"></center>
         <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beautiful flowers in Kolymbari, Crete.</p>
-        </div>
+          <h3>SPONDOR NR 3</h3>
+          <p>Przykładowe logo sponsora nr 3</p>
+          </div>
       </div>
 
       <div class="item">
-        <img src="img_flower2.jpg" alt="Flower" width="460" height="345">
+        <center><img src="https://pirsummedia.pl/wp-content/uploads/2016/04/skawab.jpg" width="600" height="600"></center>
         <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beautiful flowers in Kolymbari, Crete.</p>
-        </div>
+          <h3>SPONDOR NR 4</h3>
+          <p>Przykładowe logo sponsora nr 4</p>
+          </div>
       </div>
   
     </div>

@@ -1,5 +1,8 @@
 package net.atos.itdays.domain.lecture;
 
+import java.io.Serializable;
+import java.util.Optional;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,7 +15,7 @@ import javax.persistence.ManyToOne;
 import net.atos.itdays.domain.speaker.Speaker;
 
 @Entity 
-public class Lecture {
+public class Lecture implements Serializable {
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -41,6 +44,7 @@ public class Lecture {
 		this.topic = topic;
 	}
 
+	
 	public Speaker getSpeaker() {
 		return speaker;
 	}
@@ -48,6 +52,7 @@ public class Lecture {
 	public void setSpeaker(Speaker speaker) {
 		this.speaker = speaker;
 	}
+
 
 	@Override
 	public int hashCode() {
@@ -84,7 +89,5 @@ public class Lecture {
 	public String toString() {
 		return "Lecture [lectureId=" + lectureId + ", topic=" + topic + ", speaker=" + speaker + "]";
 	}
-	
-	
 	
 }

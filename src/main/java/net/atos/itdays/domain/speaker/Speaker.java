@@ -1,13 +1,19 @@
 package net.atos.itdays.domain.speaker;
 
+import java.io.Serializable;
+import java.util.Optional;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity 
-public class Speaker {
+public class Speaker implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -91,7 +97,5 @@ public class Speaker {
 		return "Speaker [speakerId=" + speakerId + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", description=" + description + "]";
 	}
-
-	
 
 }

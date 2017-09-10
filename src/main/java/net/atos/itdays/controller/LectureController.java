@@ -1,7 +1,7 @@
 package net.atos.itdays.controller;
 
 import java.util.Optional;
-
+import java.util.logging.Logger;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import net.atos.itdays.domain.lecture.Lecture;
 import net.atos.itdays.domain.lecture.LectureRepository;
@@ -28,24 +29,42 @@ public class LectureController {
 	@Autowired 
 	private SpeakerRepository speakerRepository;
 	
+	private static final Logger LOG = Logger.getLogger(LectureController.class.getName());
+	
 	@RequestMapping(value = "/addLecture", method = RequestMethod.GET)
 	public String getAddNewUserForm(Model model){
+		
+		model.addAttribute("speakers", speakerRepository.findAll());
 		Lecture newLecture = new Lecture();
 		model.addAttribute("newLecture", newLecture);
-		model.addAttribute("speakers", speakerRepository.findAll());
 		return "addLecture";
 	}
 	
 	@RequestMapping(value = "/addLecture", method = RequestMethod.POST)
-	public String processAddNewUserForm(Model model, @ModelAttribute("addLecture") @Valid Lecture newLecture, BindingResult result){
-		model.addAttribute("speakers", speakerRepository.findAll());
+	public String processAddNewUserForm(Model model, @ModelAttribute("newLecture") @Valid Lecture newLecture, 
+//			@RequestParam("speaker") Speaker speaker, BindingResult result){
+//			@ModelAttribute("speaker") Speaker speaker, BindingResult result){
+			BindingResult result){
 
+
+		Iterable<Speaker> speakers = speakerRepository.findAll(); // nie działa :(
+		for(Speaker sp : speakers){
+			if(this.toString().contains("Speaker [speakerId=" + sp.getSpeakerId())){
+				newLecture.setSpeaker(sp);
+			}
+		}
+		
 		if(result.hasErrors()){
+			LOG.info("POST request to create new lecture failed!");
 			return "addLecture";
 		}
-//		newLecture.setSpeaker(speakerRepository.findById((long) 6));
+		
+		
+		
 
+		
 		lectureRepository.save(newLecture); 
+		LOG.info("POST request to create new lecture was submitted: " + newLecture);
 		return "redirect:/addLecture";
 	}
 	

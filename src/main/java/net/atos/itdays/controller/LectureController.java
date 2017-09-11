@@ -47,12 +47,12 @@ public class LectureController {
 			BindingResult result){
 
 
-		Iterable<Speaker> speakers = speakerRepository.findAll(); // nie działa :(
-		for(Speaker sp : speakers){
-			if(this.toString().contains("Speaker [speakerId=" + sp.getSpeakerId())){
-				newLecture.setSpeaker(sp);
-			}
-		}
+//		Iterable<Speaker> speakers = speakerRepository.findAll(); // nie działa :(
+//		for(Speaker sp : speakers){
+//			if(this.toString().contains("Speaker [speakerId=" + sp.getSpeakerId())){
+//				newLecture.setSpeaker(sp);
+//			}
+//		}
 		
 		if(result.hasErrors()){
 			LOG.info("POST request to create new lecture failed!");

@@ -23,7 +23,7 @@ public class Event {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "EVENT_ID", nullable = false)
-    private Integer eventId;
+    private Long eventId;
 	
 	@JoinColumn(name="LECTURE_ID")
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -35,10 +35,10 @@ public class Event {
 	
 	private String place;
 	private Timestamp date;
-	public Integer getEventId() {
+	public Long getEventId() {
 		return eventId;
 	}
-	public void setEventId(Integer eventId) {
+	public void setEventId(Long eventId) {
 		this.eventId = eventId;
 	}
 	public Lecture getLecture() {

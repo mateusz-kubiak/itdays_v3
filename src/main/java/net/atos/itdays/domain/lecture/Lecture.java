@@ -15,12 +15,12 @@ import javax.persistence.ManyToOne;
 import net.atos.itdays.domain.speaker.Speaker;
 
 @Entity 
-public class Lecture implements Serializable {
+public class Lecture {
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "LECTURE_ID", nullable = false)
-    private Integer lectureId;
+    private Long lectureId;
 	
 	private String topic;
 	
@@ -28,11 +28,11 @@ public class Lecture implements Serializable {
 	@ManyToOne(fetch=FetchType.LAZY)
 	private Speaker speaker;
 
-	public Integer getLectureId() {
+	public Long getLectureId() {
 		return lectureId;
 	}
 
-	public void setLectureId(Integer lectureId) {
+	public void setLectureId(Long lectureId) {
 		this.lectureId = lectureId;
 	}
 

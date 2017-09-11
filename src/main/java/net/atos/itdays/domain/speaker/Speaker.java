@@ -13,23 +13,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity 
-public class Speaker implements Serializable {
+public class Speaker {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "SPEAKER_ID", nullable = false)
-	private Integer speakerId;
+	private Long speakerId;
 
 	private String firstName;
 	private String lastName;
 	private String description;
 	
-	private String fullName = firstName + " " + lastName;;
-	
-	public Integer getSpeakerId() {
+	public Long getSpeakerId() {
 		return speakerId;
 	}
-	public void setSpeakerId(Integer speakerId) {
+	public void setSpeakerId(Long speakerId) {
 		this.speakerId = speakerId;
 	}
 	public String getFirstName() {
@@ -51,12 +49,6 @@ public class Speaker implements Serializable {
 		this.description = description;
 	}
 	
-	public String getFullName() {
-		return fullName;
-	}
-	public void setFullName() {
-		fullName = firstName + " " + lastName;
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

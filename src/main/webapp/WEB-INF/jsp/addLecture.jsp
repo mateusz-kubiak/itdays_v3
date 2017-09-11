@@ -102,7 +102,7 @@ footer {
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
 							<c:forEach items="${speakers}" var="speaker"> 
-								<form:radiobutton path="speaker"  value="speaker"  /><b> ${speaker} </b> </label></br>
+								<form:radiobutton path="speaker"  value="speaker" name="speaker"  /><b> ${speaker} </b> </label></br>
 								<%-- <form:radiobutton path="speaker"  value="speaker" class="net.atos.itdays.domain.speaker.Speaker" /><b> ${speaker} </b> </label></br> --%>
 								<%-- <form:radiobutton id="speaker" path="speaker" value="speaker"  /><b> ${speaker} </b> </label></br> --%>
 								<%-- <form:radiobutton path="speaker.firstName" value="speaker.firstName"  /><b> ${speaker.firstName} </b> </label><label for="speaker.lastName" /> ${speaker.lastName} </label><br /> --%>

@@ -45,23 +45,12 @@ public class LectureController {
 //			@RequestParam("speaker") Speaker speaker, BindingResult result){
 //			@ModelAttribute("speaker") Speaker speaker, BindingResult result){
 			BindingResult result){
-
-
-//		Iterable<Speaker> speakers = speakerRepository.findAll(); // nie działa :(
-//		for(Speaker sp : speakers){
-//			if(this.toString().contains("Speaker [speakerId=" + sp.getSpeakerId())){
-//				newLecture.setSpeaker(sp);
-//			}
-//		}
+		
 		
 		if(result.hasErrors()){
 			LOG.info("POST request to create new lecture failed!");
 			return "addLecture";
 		}
-		
-		
-		
-
 		
 		lectureRepository.save(newLecture); 
 		LOG.info("POST request to create new lecture was submitted: " + newLecture);

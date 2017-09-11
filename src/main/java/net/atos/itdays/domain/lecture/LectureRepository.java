@@ -6,7 +6,4 @@ import net.atos.itdays.domain.speaker.Speaker;
 
 public interface LectureRepository extends CrudRepository<Lecture, Long>{
 
-//	public Lecture findByLectureId();
-	
-	public Speaker findBySpeaker(Integer speakerId);
 }

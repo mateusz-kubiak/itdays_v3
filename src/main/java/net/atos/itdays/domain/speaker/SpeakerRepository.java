@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface SpeakerRepository extends CrudRepository<Speaker, Long> {
 
+	public Speaker findBySpeakerId(Long speakerId);
 }

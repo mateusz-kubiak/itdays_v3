@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.atos.itdays.domain.lecture.Lecture;
-import net.atos.itdays.domain.lecture.LectureRepository;
-import net.atos.itdays.domain.speaker.Speaker;
-import net.atos.itdays.domain.speaker.SpeakerRepository;
+import net.atos.itdays.domain.Lecture;
+import net.atos.itdays.domain.Speaker;
+import net.atos.itdays.domain.repository.LectureRepository;
+import net.atos.itdays.domain.repository.SpeakerRepository;
 
 @Controller
 public class LectureController {
@@ -35,22 +35,26 @@ public class LectureController {
 	public String getAddNewUserForm(Model model){
 		
 		model.addAttribute("speakers", speakerRepository.findAll());
+		
 		Lecture newLecture = new Lecture();
 		model.addAttribute("newLecture", newLecture);
+		model.addAttribute("speakerId", new Long(0));
 		return "addLecture";
 	}
 	
 	@RequestMapping(value = "/addLecture", method = RequestMethod.POST)
 	public String processAddNewUserForm(Model model, @ModelAttribute("newLecture") @Valid Lecture newLecture, 
-//			@RequestParam("speaker") Speaker speaker, BindingResult result){
-//			@ModelAttribute("speaker") Speaker speaker, BindingResult result){
-			BindingResult result){
+			@RequestParam("speakerId") Long speakerId, BindingResult result){
+//			@ModelAttribute("speakerId") Long speakerId, BindingResult result){
+//		BindingResult result){
 		
 		
 		if(result.hasErrors()){
 			LOG.info("POST request to create new lecture failed!");
 			return "addLecture";
 		}
+		
+		newLecture.setLectureId(speakerId);
 		
 		lectureRepository.save(newLecture); 
 		LOG.info("POST request to create new lecture was submitted: " + newLecture);

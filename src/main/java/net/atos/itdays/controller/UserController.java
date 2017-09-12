@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import net.atos.itdays.domain.user.User;
-import net.atos.itdays.domain.user.UserRepository;
+import net.atos.itdays.domain.User;
+import net.atos.itdays.domain.repository.UserRepository;
 
 @Controller
 public class UserController {

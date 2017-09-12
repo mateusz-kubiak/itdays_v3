@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import net.atos.itdays.domain.speaker.Speaker;
-import net.atos.itdays.domain.speaker.SpeakerRepository;
+import net.atos.itdays.domain.Speaker;
+import net.atos.itdays.domain.repository.SpeakerRepository;
 
 @Controller
 public class SpeakerController {

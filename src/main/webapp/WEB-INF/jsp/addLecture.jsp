@@ -102,10 +102,7 @@ footer {
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
 							<c:forEach items="${speakers}" var="speaker"> 
-								<%-- <form:radiobutton path="speakerId"  value="speakerId" name="speakerId"  /><b> ${speaker.firstName} </b> ${speaker.lastName} </b> </label></br> --%>
-								<%-- <form:radiobutton path="speaker"  value="speaker" class="net.atos.itdays.domain.speaker.Speaker" /><b> ${speaker} </b> </label></br>
-								<form:radiobutton id="speaker" path="speaker" value="speaker"  /><b> ${speaker} </b> </label></br> --%>
-								<form:radiobutton path="speakerId" value="speakerId"  /><b> ${speaker.firstName} </b> </label><label for="speaker.lastName" /> ${speaker.lastName} </label><br /> 
+								<form:radiobutton path="speakerId" name="speakerId" value="speaker.speakerId" /><b> ${speaker.firstName} </b> </label><label for="speaker.lastName" /> ${speaker.lastName} </label><br />
 							</c:forEach>
 
 							<form:errors path="speakerId" />
@@ -113,31 +110,14 @@ footer {
 					</div>
 				</div>
 
-
-				<%-- <div class="form-group">
-					<label class="control-label col-lg-2" for="speaker">Prelegent</label>
-					<div class="col-lg-10">
-						<div class="form:input-prepend">
-							<tr>
-								<td>Prelegent :</td>
-								<td><form:select path="speakerId">
-										<form:option value="0" label="Select" />
-										<form:options items="${speakers}" itemValue="speakerId" itemLabel="lastName" />
-									</form:select></td>
-							</tr>
-						</div>
+				<div class="form-group">
+					<div class="col-lg-offset-2 col-lg-10">
+						<input type="submit" id="btnAdd" class="btn btn-primary"
+							value="Zarejestruj" />
+						<!-- <input type="submit" id="btnAdd" class="btn btn-primary" value ="Zarejestruj" onClick=${registration}/> -->
+						<p></p>
 					</div>
-				</div> --%>
-							
-
-							<div class="form-group">
-								<div class="col-lg-offset-2 col-lg-10">
-									<input type="submit" id="btnAdd" class="btn btn-primary"
-										value="Zarejestruj" />
-									<!-- <input type="submit" id="btnAdd" class="btn btn-primary" value ="Zarejestruj" onClick=${registration}/> -->
-									<p></p>
-								</div>
-							</div>
+				</div>
 			</fieldset>
 		</form:form>
 	</section>

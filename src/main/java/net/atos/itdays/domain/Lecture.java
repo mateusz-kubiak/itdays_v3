@@ -19,7 +19,7 @@ public class Lecture {
 	
 	private String topic;
 	
-//	@JoinColumn(name="SPEAKER_ID")
+	@JoinColumn(name="SPEAKER_ID")
 	@ManyToOne(fetch=FetchType.LAZY)
 	private Speaker speaker;
 

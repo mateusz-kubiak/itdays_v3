@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -21,13 +22,13 @@ public class Event {
 	@Column(name = "EVENT_ID", nullable = false)
     private Long eventId;
 	
-//	@JoinColumn(name="LECTURE_ID")
+	@JoinColumn(name="LECTURE_ID")
 	@ManyToOne(fetch=FetchType.LAZY)
 	private Lecture lecture;
 	
-//	@JoinColumn(name="USER_ID")
-	@OneToMany(fetch=FetchType.LAZY)
-	private List<User> users;
+	@JoinColumn(name="USER_ID")
+	@ManyToOne(fetch=FetchType.LAZY)
+	private User user;
 	
 	private String place;
 	private Timestamp date;
@@ -43,11 +44,11 @@ public class Event {
 	public void setLecture(Lecture lecture) {
 		this.lecture = lecture;
 	}
-	public List<User> getUsers() {
-		return users;
+	public User getUser() {
+		return user;
 	}
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public String getPlace() {
 		return place;
@@ -98,7 +99,7 @@ public class Event {
 	}
 	@Override
 	public String toString() {
-		return "Event [eventId=" + eventId + ", lecture=" + lecture + ", users=" + users + ", place=" + place
+		return "Event [eventId=" + eventId + ", lecture=" + lecture + ", user=" + user + ", place=" + place
 				+ ", date=" + date + "]";
 	}
 	

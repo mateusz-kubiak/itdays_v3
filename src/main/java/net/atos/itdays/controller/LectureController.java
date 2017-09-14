@@ -56,7 +56,7 @@ public class LectureController {
 			return "addLecture";
 		}
 
-		newLecture.setSpeaker(speaker);
+//		newLecture.setSpeaker(speaker);
 		
 		lectureRepository.save(newLecture); 
 		LOG.info("POST request to create new lecture was submitted: " + newLecture);

@@ -19,9 +19,9 @@ public class Lecture {
 	
 	private String topic;
 	
-	@JoinColumn(name="SPEAKER_ID")
-	@ManyToOne(fetch=FetchType.LAZY)
-	private Speaker speaker;
+//	@JoinColumn(name="SPEAKER_ID")
+//	@ManyToOne(fetch=FetchType.LAZY)
+	private Long speakerId;
 
 	public Long getLectureId() {
 		return lectureId;
@@ -40,12 +40,12 @@ public class Lecture {
 	}
 
 	
-	public Speaker getSpeaker() {
-		return speaker;
+	public Long getSpeakerId() {
+		return speakerId;
 	}
 
-	public void setSpeaker(Speaker speakerId) {
-		this.speaker = speakerId;
+	public void setSpeakerId(Long speakerId) {
+		this.speakerId = speakerId;
 	}
 
 
@@ -53,7 +53,7 @@ public class Lecture {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((speaker == null) ? 0 : speaker.hashCode());
+		result = prime * result + ((speakerId == null) ? 0 : speakerId.hashCode());
 		result = prime * result + ((topic == null) ? 0 : topic.hashCode());
 		return result;
 	}
@@ -67,10 +67,10 @@ public class Lecture {
 		if (getClass() != obj.getClass())
 			return false;
 		Lecture other = (Lecture) obj;
-		if (speaker == null) {
-			if (other.speaker != null)
+		if (speakerId == null) {
+			if (other.speakerId != null)
 				return false;
-		} else if (!speaker.equals(other.speaker))
+		} else if (!speakerId.equals(other.speakerId))
 			return false;
 		if (topic == null) {
 			if (other.topic != null)
@@ -82,7 +82,7 @@ public class Lecture {
 
 	@Override
 	public String toString() {
-		return "Lecture [lectureId=" + lectureId + ", topic=" + topic + ", speaker12=" + speaker + "]";
+		return "Lecture [lectureId=" + lectureId + ", topic=" + topic + ", speakerId=" + speakerId + "]";
 	}
 	
 }

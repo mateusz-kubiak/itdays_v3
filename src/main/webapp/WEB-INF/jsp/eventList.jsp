@@ -1,8 +1,6 @@
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -10,8 +8,8 @@
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<title>ŁDI - rejestracja</title>
-	<meta charset="utf-8">
+	<title>Łódzkie Dni Informatyki</title>
+  	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -54,7 +52,7 @@ footer {
 							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
-					<li><a href="#">Agenda</a></li>
+					<li><a href="<spring:url value="lectureList" />"> </span>  Agenda</a></li>
 					<li><a href="<spring:url value="sponsors" />"> </span>  Sponsorzy</a></li>
 					<li><a href="<spring:url value="contact" />"> </span>  Kontakt</a></li>
 				</ul>
@@ -70,76 +68,39 @@ footer {
 		<div class="container text-center">
 			<h1>${eventName}</h1>
 			<p>${eventDate}</p>
-			<p>TUTAJ DODASZ PRELEKCJE</p>
+			<p>Lista prelekcji</p>
 		</div>
 	</div>
+	
+<div class="container">
+          
+  <table class="table">
+  
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Miejsce</th>
+        <th>Temat</th>
+        <th>Prelegent</th>
+      </tr>
+    </thead>
+    <c:forEach items="${events}" var="event">
+    <tbody>
+      
+      <tr>
+        <td>${event.data}</td>
+        <td>${event.place}</td>
+        <td>${event.lecture_id}</td>
+        <%-- <td>${lecture.speaker.firstName} ${lecture.speaker.lastName}</td> --%>
+      </tr>
+
+    </tbody>
+   </c:forEach> 
+  </table>
+  
+</div>
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	<section class="container">
-		<form:form  modelAttribute="newLecture" class="form-horizontal">
-			<fieldset>
-				<legend>Dodaj prelekcje</legend>
-
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="topic">Temat</label>
-					<div class="col-lg-10">
-						<form:input id="topic" path="topic" type="text" class="form:input-large" />
-						<%-- <form:errors path="firstName" cssClass="text-danger"/> --%>
-						<form:errors path="topic" />
-					</div>
-				</div>
-				
-				
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="speaker">Prelegent</label>
-					<div class="col-lg-10">
-						<div class="form:input-prepend">
-							<form:select path="speakerId">
-								<c:forEach items="${speakers}" var="speaker">
-    								<form:option value="speaker.speakerId" label="${speaker.firstName} ${speaker.lastName}" />
-    							</c:forEach>
-							</form:select>
-
-						<div class="form:input-prepend">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="col-lg-offset-2 col-lg-10">
-						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Zarejestruj" />
-						<!-- <input type="submit" id="btnAdd" class="btn btn-primary" value ="Zarejestruj" onClick=${registration}/> -->
-						<p></p>
-					</div>
-				</div>
-			</fieldset>
-		</form:form>
-	</section>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	<div class="container-fluid bg-3 text-center">
-		<!-- <h3>Some of my Work</h3> -->
 	<br>
 	<br>
 
@@ -150,3 +111,4 @@ footer {
 </body>
 
 </html>
+

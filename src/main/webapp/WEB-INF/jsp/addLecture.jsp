@@ -97,8 +97,7 @@ footer {
 					</div>
 				</div>
 				
-				
-				<div class="form-group">
+				<%-- <div class="form-group">
 					<label class="control-label col-lg-2" for="speaker">Prelegent</label>
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
@@ -108,6 +107,16 @@ footer {
     							</c:forEach>
 							</form:select>
 
+						<div class="form:input-prepend">
+					</div>
+				</div> --%>
+				
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="speaker">Prelegent</label>
+					<div class="col-lg-10">
+						<div class="form:input-prepend">
+							<form:select path="speakerId" items="${speakers}" value="speaker.speakerId" />
+							<%-- <form:select itemValue="speakerId" id="speaker.speakerId" title="speaker.speakerId" path="speakerId" items="${speakers}" /> --%>
 						<div class="form:input-prepend">
 					</div>
 				</div>

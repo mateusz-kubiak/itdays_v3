@@ -1,6 +1,5 @@
 package net.atos.itdays.domain;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -22,11 +21,11 @@ public class Event {
 	@Column(name = "EVENT_ID", nullable = false)
     private Long eventId;
 	
-	@JoinColumn(name="LECTURE_ID")
+//	@JoinColumn(name="LECTURE_ID")
 	@ManyToOne(fetch=FetchType.LAZY)
 	private Lecture lecture;
 	
-	@JoinColumn(name="USER_ID")
+//	@JoinColumn(name="USER_ID")
 	@OneToMany(fetch=FetchType.LAZY)
 	private List<User> users;
 	

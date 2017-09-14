@@ -38,23 +38,25 @@ public class LectureController {
 		
 		Lecture newLecture = new Lecture();
 		model.addAttribute("newLecture", newLecture);
-		model.addAttribute("speakerId", new Long(0));
+		
+		Speaker speaker = new Speaker();
+		model.addAttribute("speaker", speaker);
 		return "addLecture";
 	}
 	
 	@RequestMapping(value = "/addLecture", method = RequestMethod.POST)
 	public String processAddNewUserForm(Model model, @ModelAttribute("newLecture") @Valid Lecture newLecture, 
-			@RequestParam("speakerId") Long speakerId, BindingResult result){
-//			@ModelAttribute("speakerId") Long speakerId, BindingResult result){
-//		BindingResult result){
+//			@RequestParam("speaker") Speaker speaker, BindingResult result){
+//			@ModelAttribute("speaker") Speaker speaker, BindingResult result){
+		BindingResult result){
 		
 		
 		if(result.hasErrors()){
 			LOG.info("POST request to create new lecture failed!");
 			return "addLecture";
 		}
-		
-		newLecture.setLectureId(speakerId);
+
+		newLecture.setSpeaker(speaker);
 		
 		lectureRepository.save(newLecture); 
 		LOG.info("POST request to create new lecture was submitted: " + newLecture);

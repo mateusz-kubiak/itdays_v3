@@ -1,6 +1,7 @@
 package net.atos.itdays.controller;
 
 import javax.validation.Valid;
+import org.apache.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,8 @@ public class SpeakerController {
 
 	@Autowired 
 	private SpeakerRepository speakerRepository;
+	
+	private final static Logger logger = Logger.getLogger(SpeakerController.class);
 	
 	@RequestMapping(value = "/addSpeaker", method = RequestMethod.GET)
 	public String getAddNewUserForm(Model model){

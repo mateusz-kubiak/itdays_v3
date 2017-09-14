@@ -9,5 +9,7 @@
 .springBeans
 .idea
 *.iml
+*.txt
+*.log
 bin
 target

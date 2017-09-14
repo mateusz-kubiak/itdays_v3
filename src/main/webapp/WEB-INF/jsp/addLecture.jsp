@@ -102,10 +102,10 @@ footer {
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
 							<c:forEach items="${speakers}" var="speaker"> 
-								<form:radiobutton path="speakerId" name="speakerId" value="speaker.speakerId" /><b> ${speaker.firstName} </b> </label><label for="speaker.lastName" /> ${speaker.lastName} </label><br />
+								<form:radiobutton path="speaker" name="speaker" value="speaker.speakerId" /><b> ${speaker.firstName} </b> </label><label for="speaker.lastName" /> ${speaker.lastName} </label><br />
 							</c:forEach>
 
-							<form:errors path="speakerId" />
+							<form:errors path="speaker" />
 						</div>
 					</div>
 				</div>

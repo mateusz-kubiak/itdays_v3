@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity 
 public class Speaker {
@@ -17,6 +18,9 @@ public class Speaker {
 	private String firstName;
 	private String lastName;
 	private String description;
+	
+	@Transient
+	private String fullName = firstName + " " + lastName;
 	
 	public Long getSpeakerId() {
 		return speakerId;
@@ -43,6 +47,14 @@ public class Speaker {
 		this.description = description;
 	}
 	
+	public String getFullName() {
+		fullName = firstName + " " + lastName;
+		return fullName;
+	}
+	public void setFullName(String firstName, String lastName) {
+		setFirstName(firstName);
+		setLastName(lastName);
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

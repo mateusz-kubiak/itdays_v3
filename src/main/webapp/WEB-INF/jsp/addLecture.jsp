@@ -54,7 +54,7 @@ footer {
 							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
-					<li><a href="#">Agenda</a></li>
+					<li><a href="<spring:url value="lectureList" />"> </span>  Agenda</a></li>
 					<li><a href="<spring:url value="sponsors" />"> </span>  Sponsorzy</a></li>
 					<li><a href="<spring:url value="contact" />"> </span>  Kontakt</a></li>
 				</ul>
@@ -89,43 +89,47 @@ footer {
 				<legend>Dodaj prelekcje</legend>
 
 				<div class="form-group">
+					<label class="control-label col-lg-2" for="topic">Miejsce</label>
+					<div class="col-lg-10">
+						<form:input id="place" path="place" type="text" class="form:input-large" />
+						<form:errors path="place" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="date">Data</label>
+					<div class="col-lg-10">
+						<form:input type="datetime-local"  path="date" min="2017-11-22" max="2017-11-23" />
+    						<span class="add-on">
+      						<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+     						</span>
+						<form:errors path="date" />
+					</div>
+				</div>
+				
+				<div class="form-group">
 					<label class="control-label col-lg-2" for="topic">Temat</label>
 					<div class="col-lg-10">
 						<form:input id="topic" path="topic" type="text" class="form:input-large" />
-						<%-- <form:errors path="firstName" cssClass="text-danger"/> --%>
 						<form:errors path="topic" />
 					</div>
 				</div>
 				
-				<%-- <div class="form-group">
-					<label class="control-label col-lg-2" for="speaker">Prelegent</label>
-					<div class="col-lg-10">
-						<div class="form:input-prepend">
-							<form:select path="speakerId">
-								<c:forEach items="${speakers}" var="speaker">
-    								<form:option value="speaker.speakerId" label="${speaker.firstName} ${speaker.lastName}" />
-    							</c:forEach>
-							</form:select>
-
-						<div class="form:input-prepend">
-					</div>
-				</div> --%>
-				
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="speaker">Prelegent</label>
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
-							<form:select path="speakerId" items="${speakers}" value="speaker.speakerId" />
-							<%-- <form:select itemValue="speakerId" id="speaker.speakerId" title="speaker.speakerId" path="speakerId" items="${speakers}" /> --%>
+							<form:select path="speakerId" items="${speakers}" value="speaker.speakerId" itemLabel="fullName"/>
 						<div class="form:input-prepend">
 					</div>
 				</div>
-
+				
+				<br/><br/>
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Zarejestruj" />
-						<!-- <input type="submit" id="btnAdd" class="btn btn-primary" value ="Zarejestruj" onClick=${registration}/> -->
+							value="Zarejestruj prelekcje" />
+						<!-- <input type="submit" id="btnAdd" class="btn btn-primary" value ="Zarejestruj prelekcje" onClick=${registration}/> -->
 						<p></p>
 					</div>
 				</div>

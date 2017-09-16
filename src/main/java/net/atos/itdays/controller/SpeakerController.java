@@ -23,7 +23,7 @@ public class SpeakerController {
 	@Autowired 
 	private SpeakerRepository speakerRepository;
 	
-	private final static Logger logger = Logger.getLogger(SpeakerController.class);
+	private final static Logger LOG = Logger.getLogger(SpeakerController.class);
 	
 	@RequestMapping(value = "/addSpeaker", method = RequestMethod.GET)
 	public String getAddNewUserForm(Model model){
@@ -36,6 +36,7 @@ public class SpeakerController {
 	public String processAddNewUserForm(Model model, @ModelAttribute("addSpeaker") @Valid Speaker newSpeaker, BindingResult result){
 
 		if(result.hasErrors()){
+			LOG.info("Errors while adding an speaker " + this );
 			return "addSpeaker";
 		}
 

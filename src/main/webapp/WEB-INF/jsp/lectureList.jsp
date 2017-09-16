@@ -52,7 +52,7 @@ footer {
 							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
-					<li><a href="#">Agenda</a></li>
+					<li><a href="<spring:url value="lectureList" />"> </span>  Agenda</a></li>
 					<li><a href="<spring:url value="sponsors" />"> </span>  Sponsorzy</a></li>
 					<li><a href="<spring:url value="contact" />"> </span>  Kontakt</a></li>
 				</ul>
@@ -78,20 +78,20 @@ footer {
   
     <thead>
       <tr>
-        <th>Id</th>
-        <th>Prelegent</th>
+        <th>Data i czas</th>
         <th>Temat</th>
+        <th>Miejsce</th>
       </tr>
     </thead>
     <c:forEach items="${lecturers}" var="lecture">
     <tbody>
       
       <tr>
-        <td>${lecture.lectureId}</td>
-        <td>${lecture.speaker.toString()}</td>
+        <td>${lecture.stringDate}</td>
         <td>${lecture.topic}</td>
+        <td>${lecture.place}</td>
+        
       </tr>
-
     </tbody>
    </c:forEach> 
   </table>

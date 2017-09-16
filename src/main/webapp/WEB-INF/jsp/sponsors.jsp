@@ -52,7 +52,7 @@ footer {
 							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
-					<li><a href="#">Agenda</a></li>
+					<li><a href="<spring:url value="lectureList" />"> </span>  Agenda</a></li>
 					<li><a href="<spring:url value="sponsors" />"> </span>  Sponsorzy</a></li>
 					<li><a href="<spring:url value="contact" />"> </span>  Kontakt</a></li>
 				</ul>

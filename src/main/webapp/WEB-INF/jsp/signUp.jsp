@@ -54,7 +54,7 @@ footer {
 							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
-					<li><a href="#">Agenda</a></li>
+					<li><a href="<spring:url value="lectureList" />"> </span>  Agenda</a></li>
 					<li><a href="<spring:url value="sponsors" />"> </span>  Sponsorzy</a></li>
 					<li><a href="<spring:url value="contact" />"> </span>  Kontakt</a></li>
 				</ul>
@@ -136,7 +136,7 @@ footer {
 				
  
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="condition">Status</label>
+					<label class="control-label col-lg-2" for="condition" >Status</label>
 					<div class="col-lg-10">
 						<form:radiobutton path="userStatus" value="student" /> Student		
 						<form:radiobutton path="userStatus" value="itSpecialist" /> Specjalista IT 		

@@ -52,7 +52,7 @@ footer {
 							<li><a href="<spring:url value="/speakerList" />"> </span>  Prelegenci </a></li>
 						</ul>
 					</li>
-					<li><a href="#">Agenda</a></li>
+					<li><a href="<spring:url value="lectureList" />"> </span>  Agenda</a></li>
 					<li><a href="<spring:url value="sponsors" />"> </span>  Sponsorzy</a></li>
 					<li><a href="<spring:url value="contact" />"> </span>  Kontakt</a></li>
 				</ul>
@@ -76,8 +76,8 @@ footer {
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Zaloguj się 1</h1>
-				<p>Zaloguj się 2</p>
+				<h1></h1>
+				<p></p>
 			</div>
 		</div>
 	</section>

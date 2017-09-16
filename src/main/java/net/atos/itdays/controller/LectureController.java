@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import net.atos.itdays.domain.Lecture;
-import net.atos.itdays.domain.Speaker;
 import net.atos.itdays.domain.repository.LectureRepository;
 import net.atos.itdays.domain.repository.SpeakerRepository;
 
@@ -48,8 +46,6 @@ public class LectureController {
 			return "addLecture";
 		}
 		
-//		newLecture.setSpeakerId((long) 4);
-		
 		lectureRepository.save(newLecture); 
 		LOG.info("POST request to create new lecture was submitted: " + newLecture);
 		return "redirect:/addLecture";
@@ -57,12 +53,13 @@ public class LectureController {
 	
 	@InitBinder
 	public void initialiseBinder(WebDataBinder binder){
-		binder.setAllowedFields("lectureId", "topic","speaker");
+		binder.setAllowedFields("lectureId", "topic", "speakerId", "place", "date");
 	}
 	
 	@GetMapping(path="/lectureList")
 	public String getAllUsers(Model model) {
 		model.addAttribute("lecturers", lectureRepository.findAll());
+		model.addAttribute("speakers", speakerRepository.findAll());
 		return "/lectureList";
 	}
 }

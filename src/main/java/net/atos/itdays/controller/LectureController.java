@@ -1,6 +1,5 @@
 package net.atos.itdays.controller;
 
-import java.util.Optional;
 import java.util.logging.Logger;
 import javax.validation.Valid;
 
@@ -31,6 +30,7 @@ public class LectureController {
 	
 	@RequestMapping(value = "/addLecture", method = RequestMethod.GET)
 	public String getAddNewUserForm(Model model){
+		LOG.info("used method getAddNewUserForm ");
 		model.addAttribute("speakers", speakerRepository.findAll());
 		Lecture newLecture = new Lecture();
 		model.addAttribute("newLecture", newLecture);
@@ -58,6 +58,7 @@ public class LectureController {
 	
 	@GetMapping(path="/lectureList")
 	public String getAllUsers(Model model) {
+		LOG.info("used method getAllUsers ");
 		model.addAttribute("lecturers", lectureRepository.findAll());
 		model.addAttribute("speakers", speakerRepository.findAll());
 		return "/lectureList";

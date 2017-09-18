@@ -1,5 +1,7 @@
 package net.atos.itdays.controller;
 
+import java.util.logging.Logger;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //@RequestMapping(path="/itdays")
 public class HomeController {
 
+	private static final Logger LOG = Logger.getLogger(HomeController.class.getName());
+	
 	@RequestMapping("/")
 	public String welcome(Model model){	
 		model.addAttribute("eventName", "Łódzkie Dni Informatyki");
